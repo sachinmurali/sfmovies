@@ -1,6 +1,10 @@
 {
+
   extends: "lob",
   globals: {
     expect: false
+  },
+  parserOptions: {
+    "ecmaVersion": 2018
   }
 }
