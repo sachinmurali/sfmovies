@@ -41,7 +41,7 @@ describe('movies integration', () => {
 
       expect(response.statusCode).to.eql(200);
       expect(response.result[0].object).to.eql('movie');
-      expect(response.result[0].title).to.eql(params.title);
+      expect(response.result[0].title).to.eql('Inception');
     });
 
   });
