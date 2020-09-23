@@ -749,6 +749,11 @@ debug@^3.1.0, debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
+decamelize@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-4.0.0.tgz#aa472d7bf660eb15f3494efd531cab7f2a709837"
+  integrity sha512-9iE1PgSik9HeIIw2JO94IidnE3eBoQrFJ3w7sFuzSX4DpmZ3v5sZpUiV5Swcf6mQEF+Y0ru8Neo+p+nyh2J+hQ==
+
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
@@ -1333,6 +1338,14 @@ hapi-bookshelf-serializer@2.1.0:
     bluebird "^2.9.34"
     boom "^2.8.0"
 
+hapi-format-error@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/hapi-format-error/-/hapi-format-error-3.0.0.tgz#07129a25804de5a7d5915aec9348ecc65aee0b7d"
+  integrity sha512-16EU6gT6gLBvTspDZGx8acOqgtrgRUQOgvnPxGaL2PISVQYJRaTzs/1Or4MszSBaffi2G7Il/zkIzUw+OnWODg==
+  dependencies:
+    decamelize "^4.0.0"
+    hoek "^4.2.1"
+
 hapi@16.6.1:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.6.1.tgz#b142f71d0a22d8151c9f5fc04a651ada092bc5c7"
@@ -1429,7 +1442,7 @@ hoek@2.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
   integrity sha1-ILt0A9POo5jpHcRxCo/xuCdKJe0=
 
-hoek@4.x.x, hoek@^4.2.0:
+hoek@4.x.x, hoek@^4.2.0, hoek@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
   integrity sha512-QLg82fGkfnJ/4iy1xZ81/9SIJiq1NGFUMGs6ParyjBZr6jW2Ufj/snDqTHixNlHdPNwN2RLVD0Pi3igeK9+JfA==
@@ -1871,7 +1884,7 @@ joi@10.x.x:
     items "2.x.x"
     topo "2.x.x"
 
-joi@12.x.x:
+joi@12, joi@12.x.x:
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-12.0.0.tgz#46f55e68f4d9628f01bbb695902c8b307ad8d33a"
   integrity sha512-z0FNlV4NGgjQN1fdtHYXf5kmgludM65fG/JlXzU6+rwkt9U5UWuXVYnXa2FpK0u6+qBuCmrm5byPNuiiddAHvQ==
