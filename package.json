@@ -36,6 +36,7 @@
     "db:setup:test": "NODE_ENV=test yarn db:setup"
   },
   "dependencies": {
+    "@hapi/boom": "^9.1.0",
     "bookshelf": "^1.2.0",
     "hapi": "16.6.1",
     "hapi-bookshelf-serializer": "2.1.0",

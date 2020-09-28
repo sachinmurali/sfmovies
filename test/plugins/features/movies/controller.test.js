@@ -10,21 +10,40 @@ describe('movie controller', () => {
   beforeEach('clear tables before test start', async () => {
 
     await Knex.raw('TRUNCATE movies CASCADE');
+    await Knex.raw('TRUNCATE locations CASCADE');
+    await Knex.raw('TRUNCATE movies_locations CASCADE');
+
+    const moviePayload = {
+      id: 123,
+      name: 'Foo Bar',
+      release_year: 1900
+    };
+    const locationPayload = { id: 123, name: 'Boulder' };
+    await Knex('movies').insert(moviePayload);
+    await Knex('locations').insert(locationPayload);
+    await Knex('locations').insert({ name: 'Denver' });
+    await Knex('movies_locations').insert({ movie_id: 123, location_id: 123 });
 
   });
 
-  describe('post', () => {
+  describe('POST', () => {
 
-    it('posts a movie and gets back a serialized movie object', async () => {
+    it('creates a movie and gets back a serialized movie object', async () => {
       const payload = { title: 'WALL-E' };
       const movie = await Controller.create(payload);
       expect(movie.get('title')).to.eql(payload.title);
 
     });
 
+    it('adds a new location to an existing movie', async () => {
+      const payload = { location_name: 'San Francisco' };
+      const movie = await Controller.createLocation(123, payload);
+      expect(movie.related('locations').length).to.eql(2);
+    });
+
   });
 
-  describe('get', () => {
+  describe('GET', () => {
 
     it('retrieves all the movies', async () => {
       const movieModelList = await new Movie().fetchAll();
